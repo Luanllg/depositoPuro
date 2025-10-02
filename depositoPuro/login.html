@@ -1,27 +1,159 @@
-<!-- Página de Login -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            background-color: #f8f6f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background: #ffe5b4;
+            padding: 20px;
+            margin: 0 0 20px 0;
+            font-size: 2em;
+            color: #6d5d4b;
+            border-bottom: 2px solid #f7c873;
+            border-radius: 0 0 24px 24px;
+        }
+        nav.menu {
+            margin-bottom: 30px;
+        }
+        nav.menu table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #0001;
+        }
+        nav.menu td {
+            background: #fff6e9;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 0;
+            border: none;
+        }
+        nav.menu a {
+            text-decoration: none;
+            color: #b97a56;
+            transition: color 0.2s;
+            padding: 8px 16px;
+            display: inline-block;
+        }
+        nav.menu a:hover {
+            color: #f7c873;
+        }
+        h3 {
+            text-align: center;
+            color: #b97a56;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        .cadastro-form {
+            width: 350px;
+            margin: 32px auto 30px auto;
+            padding: 24px;
+            background: #fff6e9;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px #0001;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cadastro-form label {
+            font-weight: bold;
+            color: #b97a56;
+        }
+        .cadastro-form input {
+            padding: 8px;
+            border: 1.5px solid #ffe5b4;
+            border-radius: 8px;
+            background: #fffdfa;
+            font-size: 1em;
+        }
+        .cadastro-form button {
+            background: #ffe5b4;
+            color: #6d5d4b;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        .cadastro-form button:hover {
+            background: #f7c873;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .login-link a {
+            color: #b97a56;
+            text-decoration: underline;
+        }
+        .login-link a:hover {
+            color: #f7c873;
+        }
+        footer {
+            text-align: center;
+            padding: 16px;
+            background: #ffe5b4;
+            color: #6d5d4b;
+            border-radius: 24px 24px 0 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 8px #0001;
+        }
+    </style>
 </head>
-<body bgcolor="#faf7e4">
-    <h2>Login</h2>
-    <form action="index.html" method="get">
-        <fieldset>
-            <legend>Dados de Acesso</legend>
-            <br><label for="usuario">Usuário:</label>
-            <br><input type="text" id="usuario" name="usuario" required>
-            <br>
-            <br><label for="senha">Senha:</label>
-            <br><input type="password" id="senha" name="senha" required>
-            <br>
-            <br><button type="submit">Entrar no Sistema</button>
-        </fieldset>
+<body>
+    <h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/5470/5470141.png" alt="icon-menu" style="width: 40px; height: auto; vertical-align: middle; margin-right: 10px;">
+        Sorveteria Santos
+    </h1>
+    <nav class="menu">
+        <table>
+            <tr>
+                <td><a href="login.html">Login</a></td>
+                <td><a href="index.html">Home</a></td>
+                <td><a href="historia.html">História</a></td>
+                <td><a href="cadastro.html">Cadastro</a></td>
+                <td><a href="consulta.html">Consulta</a></td>
+                <td><a href="financeiro.html">Financeiro</a></td>
+                <td><a href="relatorio.html">Relatório</a></td>
+            </tr>
+        </table>
+    </nav>
+
+    <h3>Cadastro de Usuário</h3>
+    <form class="cadastro-form" action="#" method="post">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <label for="confirmar">Confirmar Senha:</label>
+        <input type="password" id="confirmar" name="confirmar" required>
+
+        <button type="submit">Cadastrar</button>
     </form>
-    
+    <div class="login-link">
+        Já possui cadastro? <a href="login.html">Entrar</a>
+    </div>
     <footer>
-        <p>Desenvolvido por Gustavo Teodoro, Luan Vitor e Hallison</p>
+        <p>Desenvolvido por Gustavo Teodoro e Luan Vitor</p>
     </footer>
 </body>
 </html>

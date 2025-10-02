@@ -2,15 +2,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+   <head>
     <meta charset="UTF-8">
     <title>Página Inicial</title>
     <link rel="icon" href="img/icon.png" type="image/png">
+    <style>
+        nav.menu {
+            margin: 30px 0 30px 0;
+        }
+        nav.menu table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #0001;
+        }
+        nav.menu td {
+            background: #fff6e9;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 0;
+            border: none;
+            padding: 12px 0;
+        }
+        nav.menu a {
+            text-decoration: none;
+            color: #b97a56;
+            transition: color 0.2s;
+            padding: 8px 24px;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+        nav.menu a:hover {
+            color: #f7c873;
+            background: #fff3d1;
+            border-radius: 8px;
+        }
+    </style>
     <script>
         if (!localStorage.getItem('jaVisitou')) {
           localStorage.setItem('jaVisitou', 'true');
           window.location.href = "login.html"; 
         }
-      </script>
+    </script>
+</head>
+<!-- ...restante do código permanece igual... -->
 </head>
 <body bgcolor="#faf7e4">
     <center>
