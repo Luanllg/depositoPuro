@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body bgcolor="#faf7e4">
+        <h1><img src="https://cdn-icons-png.flaticon.com/512/5470/5470141.png" alt="icon-menu" style="width: 40px; height: auto; vertical-align: middle; margin-right: 10px;">
+            Sorveteria Santos</h1>
+            <nav class="menu" width="100%" height="50px" frameborder="0">
+                <ul>
+                    <table border="1" cellpadding="10" cellspacing="0">
+                        <tr bgcolor="#f0f0f0">
+                        <td><a href="login.html">Login</a></td>
+                        <td><a href="index.html">Home</a></td>
+                        <td><a href="historia.html">História</a></td>
+                        <td><a href="cadastro.html">Cadastro</a></td>
+                        <td><a href="consulta.html">Consulta</a></td>
+                        <td><a href="financeiro.html">Financeiro</a></td>
+                        <td><a href="relatorio.html">Relatório</a></td>
+                        </tr>
+                    </table>
+                </ul>
+            </nav>
+
+        <table border="1" cellpadding="10" cellspacing="0">
+            <h3>Tabela de Usuários</h3>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Gustavo Teodoro da Costa</td>
+                    <td>gustavo.teodoro@alunos.if</td>
+                    <td>
+                        <a href="#">Editar</a> |
+                        <a href="#">Remover</a>
+                    </td>
+        </table>
+    <h3>Cadastro de Usuário</h3>
+
+    <form action="processa_cadastro.php" method="post">
+        <label for="nome">Nome:</label>
+        <br><input type="text" id="nome" name="nome" required>
+        <br>
+        <br><label for="email">Email:</label>
+        <br><input type="email" id="email" name="email" required>
+        <br>
+        <br><label for="senha">Criar Senha:</label>
+        <br><input type="password" id="csenha" name="csenha" required>
+        <br>
+        <br><button type="submit">Cadastrar</button>
+    </form>
+    <footer>
+        <p>Desenvolvido por Gustavo Teodoro, Luan Vitor e Hallison</p>
+    </footer>
+</body>
+</html>
