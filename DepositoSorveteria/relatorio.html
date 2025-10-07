@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório</title>
+    <style>
+        body {
+            background-color: #f8f6f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background: #ffe5b4;
+            padding: 20px;
+            margin: 0 0 20px 0;
+            font-size: 2em;
+            color: #6d5d4b;
+            border-bottom: 2px solid #f7c873;
+            border-radius: 0 0 24px 24px;
+        }
+        nav.menu {
+            margin-bottom: 30px;
+        }
+        nav.menu table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #0001;
+        }
+        nav.menu td {
+            background: #fff6e9;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 0;
+            border: none;
+        }
+        nav.menu a {
+            text-decoration: none;
+            color: #b97a56;
+            transition: color 0.2s;
+            padding: 8px 16px;
+            display: inline-block;
+        }
+        nav.menu a:hover {
+            color: #f7c873;
+        }
+        h3 {
+            text-align: center;
+            color: #b97a56;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto 30px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #0001;
+            border: none;
+            background: #fffdfa;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border: none;
+        }
+        th {
+            background: #ffe5b4;
+            color: #6d5d4b;
+        }
+        tr:nth-child(even) {
+            background: #fff6e9;
+        }
+        tr:nth-child(odd) {
+            background: #fdf6e3;
+        }
+        td[contenteditable="true"] {
+            outline: 2px dashed #f7c873;
+            background: #fffbe6;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        td[contenteditable="true"]:focus {
+            background: #fff3d1;
+        }
+        .edit-actions a {
+            color: #b97a56;
+            text-decoration: none;
+            margin-right: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .edit-actions a:hover {
+            color: #f7c873;
+        }
+        .add-form {
+            width: 80%;
+            margin: 0 auto 30px auto;
+            padding: 20px;
+            background: #fff6e9;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px #0001;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        .add-form input {
+            padding: 8px;
+            border: 1.5px solid #ffe5b4;
+            border-radius: 8px;
+            background: #fffdfa;
+            font-size: 1em;
+        }
+        .add-form button {
+            background: #ffe5b4;
+            color: #6d5d4b;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .add-form button:hover {
+            background: #f7c873;
+        }
+        footer {
+            text-align: center;
+            padding: 16px;
+            background: #ffe5b4;
+            color: #6d5d4b;
+            border-radius: 24px 24px 0 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 8px #0001;
+        }
+    </style>
+    <script>
+        function adicionarLinha(event) {
+            event.preventDefault();
+            const tabela = document.querySelector("table tbody");
+            const produto = document.getElementById("produto").value;
+            const quantidade = document.getElementById("quantidade").value;
+            const valor = document.getElementById("valor").value;
+            const data = document.getElementById("data").value;
+            const id = tabela.rows.length + 1;
+
+            if(produto && quantidade && valor && data) {
+                const novaLinha = tabela.insertRow();
+                novaLinha.innerHTML = `
+                    <td>${id}</td>
+                    <td contenteditable="true">${produto}</td>
+                    <td contenteditable="true">${quantidade}</td>
+                    <td contenteditable="true">${valor}</td>
+                    <td contenteditable="true">${data}</td>
+                    <td class="edit-actions">
+                        <a href="#" onclick="alert('Salvo!')">Salvar</a>
+                        <a href="#" onclick="this.closest('tr').remove()">Remover</a>
+                    </td>
+                `;
+                document.getElementById("add-form").reset();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/5470/5470141.png" alt="icon-menu" style="width: 40px; height: auto; vertical-align: middle; margin-right: 10px;">
+        Sorveteria Santos
+    </h1>
+    <nav class="menu">
+        <table>
+            <tr>
+                <td><a href="login.php">Login</a></td>
+                <td><a href="index.php">Home</a></td>
+                <td><a href="historia.html">História</a></td>
+                <td><a href="cadastro.php">Cadastro</a></td>
+                <td><a href="consulta.php">Consulta</a></td>
+                <td><a href="financeiro.php">Financeiro</a></td>
+                <td><a href="relatorio.php">Relatório</a></td>
+            </tr>
+        </table>
+    </nav>
+
+    <h3>Relatório de Vendas (Editável)</h3>
+    <form class="add-form" id="add-form" onsubmit="adicionarLinha(event)">
+        <input type="text" id="produto" placeholder="Produto" required>
+        <input type="number" id="quantidade" placeholder="Quantidade" min="1" required>
+        <input type="text" id="valor" placeholder="Valor Total" required>
+        <input type="date" id="data" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor Total</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td contenteditable="true">Picolé de Morango</td>
+                <td contenteditable="true">30</td>
+                <td contenteditable="true">R$ 90,00</td>
+                <td contenteditable="true">2025-10-01</td>
+                <td class="edit-actions">
+                    <a href="#" onclick="alert('Salvo!')">Salvar</a>
+                    <a href="#" onclick="this.closest('tr').remove()">Remover</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td contenteditable="true">Sorvete de Chocolate</td>
+                <td contenteditable="true">20</td>
+                <td contenteditable="true">R$ 80,00</td>
+                <td contenteditable="true">2025-10-02</td>
+                <td class="edit-actions">
+                    <a href="#" onclick="alert('Salvo!')">Salvar</a>
+                    <a href="#" onclick="this.closest('tr').remove()">Remover</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <p>Desenvolvido por Gustavo Teodoro, Luan Vitor e Hallison</p>
+    </footer>
+</body>
+</html>
