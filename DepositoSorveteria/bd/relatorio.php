@@ -10,7 +10,7 @@ $rows = $stmt->fetchAll();
 <body>
     <h1>Relatório de Vendas</h1>
 
-    <form action="processa_relatorio.php" method="post">
+    <form action="bd/processa_relatorio.php" method="post">
         <input name="produto" placeholder="Produto" required>
         <input name="quantidade" type="number" min="1" placeholder="Quantidade" required>
         <input name="valor_total" type="number" step="0.01" placeholder="Valor total" required>
@@ -28,11 +28,12 @@ $rows = $stmt->fetchAll();
                 <td><?= number_format($r['valor_total'],2,',','.') ?></td>
                 <td><?= $r['data'] ?></td>
                 <td>
-                    <a href="editar_relatorio.php?id=<?= $r['id'] ?>">Editar</a> |
-                    <a href="excluir_relatorio.php?id=<?= $r['id'] ?>" onclick="return confirm('Excluir?')">Excluir</a>
+                    <a href="bd/editar_relatorio.php?id=<?= $r['id'] ?>">Editar</a> |
+                    <a href="bd/excluir_relatorio.php?id=<?= $r['id'] ?>" onclick="return confirm('Excluir?')">Excluir</a>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
 </body>
 </html>
+
