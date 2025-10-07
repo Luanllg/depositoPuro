@@ -12,7 +12,7 @@ $produtos = $stmt->fetchAll();
     <h1>Produtos</h1>
 
     <h3>Adicionar Produto</h3>
-    <form action="processa_produto.php" method="post">
+    <form action="bd/processa_produto.php" method="post">
         <input name="nome" placeholder="Nome" required>
         <input name="categoria" placeholder="Categoria">
         <input name="preco" type="number" step="0.01" placeholder="Preço" required>
@@ -41,3 +41,4 @@ $produtos = $stmt->fetchAll();
     </table>
 </body>
 </html>
+
