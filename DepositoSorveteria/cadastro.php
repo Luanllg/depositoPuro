@@ -14,7 +14,7 @@ if (isset($_GET['msg'])) {
 <body>
     <h1>Sorveteria Santos - Cadastro</h1>
     <?php if($msg) echo "<p>$msg</p>"; ?>
-    <form action="processa_cadastro.php" method="post">
+    <form action="bd/processa_cadastro.php" method="post">
         <label>Nome:<br><input type="text" name="nome" required></label><br>
         <label>Email:<br><input type="email" name="email" required></label><br>
         <label>Senha:<br><input type="password" name="senha" required></label><br>
@@ -23,3 +23,4 @@ if (isset($_GET['msg'])) {
     <p><a href="login.php">Ir para login</a></p>
 </body>
 </html>
+
