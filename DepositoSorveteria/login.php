@@ -10,7 +10,7 @@ if (isset($_GET['msg']) && $_GET['msg'] === 'erro') $msg = 'Credenciais inválid
 <body>
     <h1>Login - Sorveteria Santos</h1>
     <?php if($msg) echo "<p style='color:red;'>$msg</p>"; ?>
-    <form action="processa_login.php" method="post">
+    <form action="bd/processa_login.php" method="post">
         <label>Email:<br><input type="email" name="email" required></label><br>
         <label>Senha:<br><input type="password" name="senha" required></label><br>
         <button type="submit">Entrar</button>
@@ -18,3 +18,4 @@ if (isset($_GET['msg']) && $_GET['msg'] === 'erro') $msg = 'Credenciais inválid
     <p><a href="cadastro.php">Cadastrar-se</a></p>
 </body>
 </html>
+
