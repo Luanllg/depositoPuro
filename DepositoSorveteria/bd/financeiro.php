@@ -11,7 +11,7 @@ $itens = $stmt->fetchAll();
 <body>
     <h1>Financeiro</h1>
 
-    <form action="processa_financeiro.php" method="post">
+    <form action="bd/processa_financeiro.php" method="post">
         <select name="tipo" required>
             <option value="">Tipo</option>
             <option value="Entrada">Entrada</option>
@@ -34,11 +34,12 @@ $itens = $stmt->fetchAll();
                 <td><?= number_format($i['valor'],2,',','.') ?></td>
                 <td><?= $i['data'] ?></td>
                 <td>
-                    <a href="editar_financeiro.php?id=<?= $i['id'] ?>">Editar</a> |
-                    <a href="excluir_financeiro.php?id=<?= $i['id'] ?>" onclick="return confirm('Excluir?')">Excluir</a>
+                    <a href="bd/editar_financeiro.php?id=<?= $i['id'] ?>">Editar</a> |
+                    <a href="bd/excluir_financeiro.php?id=<?= $i['id'] ?>" onclick="return confirm('Excluir?')">Excluir</a>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
 </body>
 </html>
+
